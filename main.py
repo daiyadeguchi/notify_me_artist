@@ -18,6 +18,7 @@ if __name__ == '__main__':
         response = requests.get(urls[key])
         soup = BeautifulSoup(response.content, "html.parser")
         locs = soup.select('.primary-detail')
+				# TODO too much for loops
         for loc in locs:
             for japan in ["JPN", "Japan", "Tokyo"]:
                 if(japan in str(loc)):
